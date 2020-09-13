@@ -1,19 +1,20 @@
+/* eslint-disable no-undef */
 const path = require("path");
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: path.join(__dirname, "/src/index.ts"),
     output: {
         path: path.join(__dirname, "/dist"),
         filename: "bundle.js",
-        publicPath: '/'
+        publicPath: "/"
     },
     module: {
         rules: [
             {
                 test: /\.ts$/,
-                use: 'ts-loader',
+                use: "ts-loader",
                 exclude: /node_modules/,
             },
         ],
@@ -28,7 +29,7 @@ module.exports = {
         extensions: [".ts", ".js"]
     },
     devServer: {  // configuration for webpack-dev-server
-        contentBase: './public',  //source of static assets
+        contentBase: "./public",  //source of static assets
         port: 7700, // port to run dev-server
     } 
 }
